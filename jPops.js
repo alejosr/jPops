@@ -9,8 +9,13 @@
  * Revision: 1
  */
 
+function jpops_NewWindows(page, width=500, height=400, top=100, left=200, resizable="yes"){
+	var options="toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable="+resizable+", width="+width+", height="+height+", top="+top+", left="+left;
+	window.open(page,"",options);
+}
+
 function jpops_UpAlert(text, container="body", time=6000, bgcolor="e12626", textcolor="f6f6f6", timeslide=500){
-  $(container).prepend("<div id='jpop_upalert_id' style='width:80%; text-align:center; background-color:#"+bgcolor+"; padding:10px; margin:auto; color:#"+textcolor+"'>"+text+"</div>");
+	$(container).prepend("<div id='jpop_upalert_id' style='width:80%; text-align:center; background-color:#"+bgcolor+"; padding:10px; margin:auto; color:#"+textcolor+"'>"+text+"</div>");
 	setTimeout(function(){ $('#jpop_upalert_id').slideUp(timeslide);}, time);
 	setTimeout(function(){ $('#jpop_upalert_id').remove();}, time+timeslide);
 }
